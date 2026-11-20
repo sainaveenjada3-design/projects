@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Nexus | Intelligent Documentation Assistant</title>
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <!-- Decorative background -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="grid-background"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="/logo" alt="iSpace Logo" class="brand-logo">
+        </div>
+
+        <nav class="nav-links">
+            <a href="/home">Home</a>
+            <a href="/technology">Technology</a>
+            <a href="/workflow">How It Works</a>
+        </nav>
+
+        <button class="nav-button" onclick="openChat()">Launch AI Assistant ↗</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="pulse-dot"></span>
+                SCAN API DOCUMENT PLATFORM
+            </div>
+
+            <h1><span>One Intelligent AI.</span></h1>
+
+            <p class="hero-description">
+                Discover a smarter way to understand API documentation.
+                Upload Python endpoint files, explore API functionality,
+                understand code and receive intelligent answers powered
+                by Retrieval-Augmented Generation and Amazon Bedrock.
+            </p>
+
+            <div class="hero-actions">
+                <button class="primary-button" onclick="openChat()">Start Conversation →</button>
+            </div>
+
+            <!-- <div class="backend-status" id="backendStatus">
+                <span class="status-indicator">●</span>
+                Checking backend connection...
+            </div> -->
+        </div>
+
+        <div class="hero-orbit">
+            <div class="orbit-center">✦</div>
+            <span class="orbit-point point-one"></span>
+            <span class="orbit-point point-two"></span>
+            <span class="orbit-point point-three"></span>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section class="technology-section" id="technology">
+        <div class="section-heading">
+            <small>POWERED BY ADVANCED TECHNOLOGY</small>
+            <h2>Intelligent AI Technology Stack</h2>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon">⚡</div>
+                <h3>Python &amp; FastAPI</h3>
+                <p>High-performance backend APIs for document uploading and intelligent question processing.</p>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">✧</div>
+                <h3>Amazon Bedrock</h3>
+                <p>Foundation models generate natural-language answers using retrieved API context.</p>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">☁</div>
+                <h3>Amazon S3</h3>
+                <p>Cloud storage for Python endpoint source files and documentation.</p>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">◈</div>
+                <h3>RAG Knowledge Base</h3>
+                <p>Retrieves relevant uploaded document content to ground AI-generated responses.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="workflow" id="workflow">
+        <div class="section-heading">
+            <small>SMART DOCUMENTATION WORKFLOW</small>
+            <h2>From Source Code to AI Answers</h2>
+        </div>
+
+        <div class="workflow-grid">
+            <div class="workflow-card">
+                <div class="workflow-number">STEP 01 / UPLOAD</div>
+                <h3>Upload API Files</h3>
+                <p>Upload Python endpoint files through your FastAPI application. Files are stored in your configured S3 location.</p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-number">STEP 02 / INDEX</div>
+                <h3>Knowledge Base Sync</h3>
+                <p>Synchronize uploaded documents with the Bedrock Knowledge Base for retrieval.</p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-number">STEP 03 / ASK</div>
+                <h3>Ask Your API Questions</h3>
+                <p>Ask questions about your uploaded endpoint files and receive answers based on retrieved source content.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2026 API Nexus | Intelligent API Documentation Assistant
+    </footer>
+
+    <!-- CHATBOT WINDOW -->
+    <div class="chat-window" id="chatWindow">
+
+        <div class="chat-header">
+            <div class="bot-avatar">🤖</div>
+
+            <div class="bot-info">
+                <h3>API Documentation Assistant</h3>
+                <p id="chatStatus">● Connecting...</p>
+            </div>
+
+            <button class="header-action" onclick="resetChat()" title="Reset chat">↻</button>
+            <button class="header-action" onclick="closeChat()" title="Close">×</button>
+        </div>
+
+        <!-- Messages are rendered by js/script.js -->
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <form class="chat-input-area" id="chatForm">
+            <input
+                type="text"
+                class="chat-input"
+                id="questionInput"
+                placeholder="Ask anything about your API files..."
+                autocomplete="off"
+                required
+            >
+            <button type="submit" class="send-button" id="sendButton">➤</button>
+        </form>
+
+        <div class="chat-footer">AI responses are grounded in uploaded API documents.</div>
+    </div>
+
+    <!-- FLOATING CHAT BUTTON -->
+    <button class="chat-toggle" id="chatToggle" onclick="toggleChat()">✦</button>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
